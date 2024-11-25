@@ -1,0 +1,7 @@
+<p>{{personName$ | async}}</p>
+<button class="btn btn-primary" type="button" (click)="onChangeName()">Change name</button>
+<div class="input-group mb-3 w-25 mx-auto">
+  <input type="text" class="form-control" placeholder="enter value" [(ngModel)]="step">
+  <button class="btn btn-outline-secondary" type="button" (click)="onAdd()">Add to counter</button>
+</div>
+

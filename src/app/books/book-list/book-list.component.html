@@ -1,0 +1,35 @@
+<!-- <div
+  *ngFor="let book of books"
+  class="book-item">
+  {{book | json}}
+  <p>{{book.volumeInfo.title}}</p><span> by {{book.volumeInfo.authors}}</span>
+  <button
+    (click)="add.emit(book.id)"
+    data-test="add-button"
+  >Add to Collection</button>
+</div> -->
+
+<div class="row">
+  <div class="col-md-6" *ngFor="let book of books">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
+        <h3 class="mb-0">{{book.volumeInfo.title}}</h3>
+        <div class="mb-1 text-body-secondary">
+          @for (author of book.volumeInfo.authors; track $index) {
+            <span>{{author}}</span>
+          } |
+          {{book.volumeInfo.publishedDate}}
+        </div>
+        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          Continue reading
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img [src]="book?.volumeInfo?.imageLinks?.smallThumbnail" />
+      </div>
+    </div>
+  </div>
+</div>
